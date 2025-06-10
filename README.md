@@ -1,6 +1,6 @@
 # 🌌 CoSMOS: Controlling Semantics and Object Counts via Mean-Oriented Steering
 
-This repository contains the official implementation of **CoSMOS**, a training-free inference-time steering method for improving **object count fidelity** in text-to-image (T2I) diffusion models such as Stable Diffusion. CoSMOS dynamically injects steering vectors into cross-attention layers during the early denoising steps of the generation process.
+This repository contains the official implementation of **CoSMOS**, a training-free inference-time steering method for improving **numerical fidelity** in text-to-image (T2I) diffusion models such as *Stable Diffusion*. CoSMOS dynamically injects steering vectors into cross-attention layers during the early denoising steps of the generation process.
 
 ---
 ## 📊 Qualitive Results
@@ -68,7 +68,7 @@ fidelity in T2I models.
 │
 ├── src/ # Source notebooks
 │ ├── compute_steering_vector.ipynb # Builds steering vectors
-│ ├── evaluate.ipynb # Uses LLaVa to count generated objects
+│ ├── evaluate.ipynb # Uses LLaVa-OneVision to count generated objects
 │ ├── extract_npy.ipynb # Extracts cross-attention vectors
 │ ├── main.ipynb # Full pipeline
 │ └── visualize.ipynb # Visualization with KDE plots
@@ -87,7 +87,7 @@ cd CoSMOS-T2I-Steering
 ---
 
 ## 🙋 Acknowledgements
-This work was conducted at Ewha Womans University and inspired by prior work on Inference-Time Intervention (ITI) and attention steering in diffusion models.
+This work was conducted at Ewha Womans University and inspired by prior work on *Inference-Time Intervention (ITI)* and attention steering in diffusion models.
 ```
 @article{li2024inference,
   title={Inference-time intervention: Eliciting truthful answers from a language model},
