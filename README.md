@@ -3,6 +3,17 @@
 This repository contains the official implementation of **CoSMOS**, a training-free inference-time steering method for improving **numerical fidelity** in text-to-image (T2I) diffusion models such as *Stable Diffusion*. CoSMOS dynamically injects steering vectors into cross-attention layers during the early denoising steps of the generation process.
 
 ---
+## 📊 Datasets
+<p align="center">
+  <img width="629" alt="image" src="https://github.com/user-attachments/assets/75139afe-6b24-4648-bbae-4a8641451b1b" />
+</p>
+
+## 📊 Distribution of Correct and Incorrect Images in Internal Dataset
+<p align="center">
+  <img width="633" alt="image" src="https://github.com/user-attachments/assets/4222fc8e-7820-4e73-beb6-6e1eb0aed278" />
+</p>
+
+
 ## 📊 Qualitive Results
 <p align="center">
   <img width="693" alt="image" src="https://github.com/user-attachments/assets/486cfd86-0090-4f1c-b56c-f19266a35684" />
@@ -60,8 +71,8 @@ fidelity in T2I models.
 
 ```
 ├── excel/ # Datasets with (prompt, seed)
-│ ├── internal_dataset.xlsx # Latents used for steering vector
-│ └── external_dataset.csv # Prompts for testing generalization
+│ ├── internal_dataset.xlsx # prompts and seeds used for steering vector
+│ └── external_dataset.csv # prompts and seeds for testing generalization
 │
 ├── paper/ # Project paper
 │ └── CoSMOS__...pdf
@@ -87,7 +98,7 @@ cd CoSMOS-T2I-Steering
 ---
 
 ## 🙋 Acknowledgements
-This work was conducted at Ewha Womans University and inspired by prior work on *Inference-Time Intervention (ITI)* and attention steering in diffusion models.
+This work was conducted at Ewha Womans University and inspired by prior work on *Inference-Time Intervention (ITI)* and attention steering in LLM models.
 ```
 @article{li2024inference,
   title={Inference-time intervention: Eliciting truthful answers from a language model},
