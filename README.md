@@ -3,6 +3,41 @@
 This repository contains the official implementation of **CoSMOS**, a training-free inference-time steering method for improving **numerical fidelity** in text-to-image (T2I) diffusion models such as *Stable Diffusion*. CoSMOS dynamically injects steering vectors into cross-attention layers during the early denoising steps of the generation process.
 
 ---
+
+## 🔍 Motivation
+
+Text-to-image(T2I) generation models have improved greatly and have been widely
+used in many applications. However, **T2I models still encounter challenges in
+accurately representing the requested number of objects in the user prompt**. In
+this work, we alleviate this problem by investing an inference-time intervention
+framework that injects steering vectors into the cross-attention layers of a pre-
+trained Stable Diffusion model. Our approach **modulates the attention query
+projections using pre-computed direction vectors, without requiring any model
+fine-tuning**. To improve robustness and adaptability, we introduce a **dynamic
+scaling mechanism** for the steering strength, computed from the distance and
+alignment between current latent representations and a reference distribution. We
+explore both **single-vector and step-wise variants** of the method and show that our
+approach enhances control over object count in generated images while preserving
+image fidelity. This demonstrates that inference-time steering, though simple in
+implementation, can serve as an effective mechanism for improving numerical
+fidelity in T2I models. 
+
+
+## 🛠️ Architecture
+<p align="center">
+  <img width="690" alt="image" src="https://github.com/user-attachments/assets/527cf36e-118c-4442-a8e4-3f74891d5229" />
+</p>
+
+## ✨ Features
+
+- ⚙️ **No fine-tuning required** — works at inference time only
+- 🎯 **Numerical fidelity improvement** — better control over object counts
+- 🔀 **Single-vector & Multiple-vector options**
+- 📐 **Dynamic α** — adaptive steering strength based on semantic gap
+- 📊 Supports both qualitative & quantitative evaluations
+
+---
+
 ## 📊 Datasets
 <p align="center">
   <img width="629" alt="image" src="https://github.com/user-attachments/assets/75139afe-6b24-4648-bbae-4a8641451b1b" />
@@ -25,38 +60,6 @@ This repository contains the official implementation of **CoSMOS**, a training-f
 </p>
 
 ---
-
-## 🔍 Motivation
-
-Text-to-image(T2I) generation models have improved greatly and have been widely
-used in many applications. However, **T2I models still encounter challenges in
-accurately representing the requested number of objects in the user prompt**. In
-this work, we alleviate this problem by investing an inference-time intervention
-framework that injects steering vectors into the cross-attention layers of a pre-
-trained Stable Diffusion model. Our approach **modulates the attention query
-projections using pre-computed direction vectors, without requiring any model
-fine-tuning**. To improve robustness and adaptability, we introduce a **dynamic
-scaling mechanism** for the steering strength, computed from the distance and
-alignment between current latent representations and a reference distribution. We
-explore both **single-vector and step-wise variants** of the method and show that our
-approach enhances control over object count in generated images while preserving
-image fidelity. This demonstrates that inference-time steering, though simple in
-implementation, can serve as an effective mechanism for improving numerical
-fidelity in T2I models. 
-
-## 🛠️ Architecture
-<p align="center">
-  <img width="690" alt="image" src="https://github.com/user-attachments/assets/527cf36e-118c-4442-a8e4-3f74891d5229" />
-</p>
-
-## ✨ Features
-
-- ⚙️ **No fine-tuning required** — works at inference time only
-- 🎯 **Numerical fidelity improvement** — better control over object counts
-- 🔀 **Single-vector & Multiple-vector options**
-- 📐 **Dynamic α** — adaptive steering strength based on semantic gap
-- 📊 Supports both qualitative & quantitative evaluations
-
 
 ## 📄 Paper
 
